@@ -1,0 +1,21 @@
+- hosts: tasktracker
+  tasks:
+    - copy:
+        src: /jdk-8u171-linux-x64.rpm
+        dest: /root
+    - copy:
+        src: /hadoop-1.2.1-1.x86_64.rpm
+        dest: /root
+    - shell: "rpm -i /root/jdk-8u171-linux-x64.rpm"
+    - shell: "rpm -i /root/hadoop-1.2.1-1.x86_64.rpm --force"
+
+    - template:
+        src: /root/MRCLUSTER/tasktracker/mapred-site.xml
+        dest: /etc/hadoop
+
+    - shell: "hadoop-daemon.sh start tasktracker"
+
+- hosts: jobtracker
+  tasks:
+    - shell: "hadoop-daemon.sh stop jobtracker"
+    - shell: "hadoop-daemon.sh start jobtracker"

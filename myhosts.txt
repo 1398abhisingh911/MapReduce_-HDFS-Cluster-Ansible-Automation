@@ -1,0 +1,22 @@
+[master]
+master ansible_host=3.108.62.151 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/ansible.pem  
+
+[slave]
+13.232.251.167 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/ansible.pem 
+13.126.61.107 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/ansible.pem 
+
+
+[namenode]
+65.0.20.63 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/MRCLUSTERHDFSCLUSTER.pem
+[datanode]
+3.108.65.227 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/MRCLUSTERHDFSCLUSTER.pem
+
+[jobtracker]
+65.0.5.87 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/MRCLUSTERHDFSCLUSTER.pem
+
+[tasktracker]
+13.233.144.55 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/MRCLUSTERHDFSCLUSTER.pem
+
+[client]
+65.2.73.66 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/MRCLUSTERHDFSCLUSTER.pem
+
